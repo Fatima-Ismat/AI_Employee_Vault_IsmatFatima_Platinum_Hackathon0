@@ -1,3 +1,13 @@
+---
+title: AI Employee Vault Ismat Platinum
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # AI Employee Vault — IsmatFatima — Platinum Tier
 ### Personal AI Employee Hackathon 0
 
