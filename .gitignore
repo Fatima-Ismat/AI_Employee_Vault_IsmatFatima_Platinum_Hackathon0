@@ -1,0 +1,49 @@
+# Environment
+.env
+*.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Credentials
+credentials/client_secret.json
+credentials/token.json
+credentials/*.json
+credentials.json
+token.json
+*.pem
+*.key
+*.p12
+*.pfx
+service_account*.json
+
+# Agent outputs (generated at runtime)
+agent_outputs/
+watched_folder/
+logs/pm2/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Obsidian workspace (user-specific)
+AI_Employee_Vault/.obsidian/workspace.json
+AI_Employee_Vault/.obsidian/workspace-mobile.json
+
+# Node
+node_modules/
+npm-debug.log*

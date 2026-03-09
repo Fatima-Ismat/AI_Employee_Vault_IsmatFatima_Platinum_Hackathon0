@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --surface:        #0f0f1a;
+  --surface-card:   #161625;
+  --surface-border: #2a2a40;
+  --surface-hover:  #1e1e30;
+  --brand:          #6366f1;
+  --brand-light:    #818cf8;
+  --text-primary:   #e2e8f0;
+  --text-muted:     #64748b;
+  --success:        #22c55e;
+  --warning:        #f59e0b;
+  --danger:         #ef4444;
+  --info:           #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--surface-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a55; }
+
+/* Glow effect for status indicators */
+.glow-green  { box-shadow: 0 0 8px rgba(34, 197, 94, 0.5); }
+.glow-yellow { box-shadow: 0 0 8px rgba(245, 158, 11, 0.5); }
+.glow-red    { box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); }
+.glow-brand  { box-shadow: 0 0 12px rgba(99, 102, 241, 0.4); }
+
+/* Card base */
+.card {
+  @apply bg-surface-card border border-surface-border rounded-xl p-5;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+/* Pulse dot */
+.pulse-dot {
+  @apply w-2 h-2 rounded-full animate-pulse-slow;
+}
