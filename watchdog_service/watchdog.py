@@ -8,7 +8,7 @@ Automatically restarts processes and logs all recovery events.
 Output log: AI_Employee_Vault/Logs/watchdog_log.md
 
 Run:
-  python -m watchdog.watchdog
+  python -m watchdog_service.watchdog
 """
 
 import os

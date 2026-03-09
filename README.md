@@ -63,7 +63,7 @@ mcp     mcp       mcp       mcp
   ceo_briefing.py            cloud/sync_manager.py
   pipeline_visualizer.py     agents/a2a_protocol.py
 
-  watchdog/watchdog.py       MONITORING
+  watchdog_service/watchdog.py       MONITORING
   resilience/recovery.py     monitoring/system_health.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   DASHBOARD                       AUDIT TRAIL
@@ -101,7 +101,7 @@ mcp     mcp       mcp       mcp
 |---------|------|
 | CEO AI Weekly Briefing | `analytics/ceo_briefing.py` |
 | Pipeline visualization + ASCII | `analytics/pipeline_visualizer.py` |
-| Self-healing watchdog | `watchdog/watchdog.py` |
+| Self-healing watchdog | `watchdog_service/watchdog.py` |
 | Error recovery system | `resilience/error_recovery.py` |
 | System health monitor | `monitoring/system_health.py` |
 | FastAPI backend (10 endpoints) | `backend/main.py` |
@@ -304,14 +304,14 @@ error recovery, pipeline visualization, and PM2 process management.
 
 ## Gmail Watcher Integration
 
-The Gmail watcher (`watchers/gmail_watcher.py`) monitors a Gmail inbox and converts each unread email into a pipeline task:
+Gmail Watcher monitors unread Gmail messages using IMAP and a Gmail App Password. It polls the inbox and converts unread emails into AI Employee Inbox tasks.
 
 ```
 Gmail Inbox (unread)
        │
        ▼
-GmailWatcher.poll()
-       │  IMAP / OAuth
+GmailWatcher.poll()   ← IMAP over SSL (imap.gmail.com:993)
+       │
        ▼
 Email parsed (subject, sender, body)
        │
@@ -325,8 +325,11 @@ write_inbox_task() → AI_Employee_Vault/Inbox/
 Orchestrator picks up on next cycle
 ```
 
-**Setup:** Enable IMAP in Gmail → create App Password → set `GMAIL_USER` and `GMAIL_APP_PASSWORD` in `.env`.
-For OAuth: place `credentials/client_secret.json` in the `credentials/` folder (gitignored — never committed).
+**Setup:** Enable IMAP in Gmail settings → create a Gmail App Password (Google Account → Security → App Passwords) → set in `.env`:
+```env
+GMAIL_USER=your@gmail.com
+GMAIL_APP_PASSWORD=your-app-password
+```
 
 ---
 

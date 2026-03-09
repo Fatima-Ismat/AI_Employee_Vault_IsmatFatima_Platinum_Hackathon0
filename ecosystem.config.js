@@ -72,7 +72,7 @@ module.exports = {
       ...BASE,
       name:       "watchdog",
       script:     "python",
-      args:       "-m watchdog.watchdog",
+      args:       "-m watchdog_service.watchdog",
       log_file:   "logs/pm2/watchdog.log",
       error_file: "logs/pm2/watchdog-error.log",
       time:       true,

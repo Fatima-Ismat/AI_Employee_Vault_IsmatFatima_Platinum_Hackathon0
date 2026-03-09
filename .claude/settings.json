@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/AI_Employee_Vault/Inbox\")",
+      "Bash(mkdir -p \"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/AI_Employee_Vault/Needs_Action\")",
+      "Bash(mkdir -p \"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/AI_Employee_Vault/Plans\")",
+      "Bash(mkdir -p \"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/AI_Employee_Vault/Pending_Approval\")",
+      "Bash(mkdir -p \"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/AI_Employee_Vault/Approved\")",
+      "Bash(mkdir -p \"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/AI_Employee_Vault/Rejected\")",
+      "Bash(mkdir -p \"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/AI_Employee_Vault/Done\")",
+      "Bash(mkdir -p \"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/AI_Employee_Vault/Logs\")",
+      "Bash(\"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/Dockerfile\")",
+      "Bash(\"c:/Users/Zohair/Desktop/api/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/requirements-hf.txt\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Zohair\\Desktop\\api\\AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0"
+    ]
+  }
+}

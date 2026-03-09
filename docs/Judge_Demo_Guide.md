@@ -128,7 +128,7 @@ Open: `http://localhost:3000`
 | Ralph Wiggum loop | Core requirement | `orchestrator/agent_loop.py` |
 | Prompt history | Platinum bonus | `history/prompts.md` |
 | CEO briefing | Platinum bonus | `analytics/ceo_briefing.py` |
-| Watchdog recovery | Platinum bonus | `watchdog/watchdog.py` |
+| Watchdog recovery | Platinum bonus | `watchdog_service/watchdog.py` |
 | Frontend dashboard | Platinum bonus | `frontend/` |
 | FastAPI backend | Platinum bonus | `backend/main.py` |
 | A2A protocol | Platinum bonus | `agents/a2a_protocol.py` |

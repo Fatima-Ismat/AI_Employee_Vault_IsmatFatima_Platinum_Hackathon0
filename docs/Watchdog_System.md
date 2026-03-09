@@ -4,7 +4,7 @@
 
 The self-healing watchdog monitors all AI Employee processes and automatically recovers from crashes.
 
-**File:** `watchdog/watchdog.py`
+**File:** `watchdog_service/watchdog.py`
 **Log:** `AI_Employee_Vault/Logs/watchdog_log.md`
 
 ## Capabilities
@@ -28,7 +28,7 @@ The self-healing watchdog monitors all AI Employee processes and automatically r
 
 ### Standalone (manages its own processes)
 ```bash
-python -m watchdog.watchdog
+python -m watchdog_service.watchdog
 ```
 
 ### Alongside PM2 (monitor-only mode)
@@ -37,7 +37,7 @@ python -m watchdog.watchdog
 pm2 start ecosystem.config.js
 
 # Start watchdog in monitor-only mode (no process management)
-python -m watchdog.watchdog  # set start_processes=False
+python -m watchdog_service.watchdog  # set start_processes=False
 ```
 
 ## Log Format
