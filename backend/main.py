@@ -51,6 +51,7 @@ app.add_middleware(
         "http://141.145.155.147:3000",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://ismat110-ai-employee-vault-ismat-platinum.hf.space",
     ],
     allow_credentials=True,
     allow_methods=["*"],
