@@ -32,22 +32,36 @@ pinned: false
 
 ---
 
-## 🚀 Live Deployment
-
-| Service | URL |
-|---------|-----|
-| 🌐 Frontend Dashboard | https://ai-employee-vault-ismat-fatima-plat.vercel.app |
-| 🤖 Backend API | https://ismat110-ai-employee-vault-ismat-platinum.hf.space |
-| 📦 GitHub Repository | https://github.com/Fatima-Ismat/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0 |
-
----
-
 ## 🎥 Demo Video
 
 > Demo video will be added here after final recording.
 
 - YouTube Demo: `COMING_SOON`
 - Live system is already accessible at the Vercel link above
+
+---
+
+## 🎬 System Workflow Demo
+
+![System Workflow](docs/system-workflow.gif)
+
+This animation shows the full autonomous AI Employee pipeline — from watcher input through Claude reasoning, human approval, MCP execution, evidence logging, and CEO briefing, all the way to task completion.
+
+```
+External Event → Inbox → Needs Action → Plans (Claude AI) →
+Pending Approval (HITL) → Approved → MCP Tool Execution → Evidence + CEO Briefing → Done
+                        ↘ Rejected → logged + closed
+```
+
+---
+
+## 🚀 Live System Links
+
+| Service | URL |
+|---------|-----|
+| 🌐 Frontend Dashboard | https://ai-employee-vault-ismat-fatima-plat.vercel.app |
+| 🤖 Backend API | https://ismat110-ai-employee-vault-ismat-platinum.hf.space |
+| 📦 GitHub Repository | https://github.com/Fatima-Ismat/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0 |
 
 ---
 
@@ -73,41 +87,6 @@ pinned: false
 - **Self-healing watchdog** with error recovery system
 - **Full audit trail**: prompts · agent runs · approval decisions
 - **Judge Evidence tab** — interactive evidence pack in the dashboard
-
----
-
-## ⚡ Judge Quick Evidence Summary
-
-| Evidence Area | Proof |
-|--------------|-------|
-| **Cloud Deployment** | Vercel (frontend) + Hugging Face Spaces Docker (backend) + GitHub CI/CD |
-| **Gmail Watcher** | `watchers/gmail_watcher.py` — IMAP + Gmail App Password (NOT OAuth) |
-| **Filesystem Watcher** | `watchers/filesystem_watcher.py` — watchdog lib → `watched_folder/` |
-| **WhatsApp Watcher** | `watchers/whatsapp_watcher.py` — Webhook → CRITICAL priority tasks |
-| **HITL Approval** | `approval_system/hitl.py` + Dashboard Approvals tab + `history/approvals.md` |
-| **Prompt History** | `history/prompts.md` — every Claude prompt+response logged with run_id |
-| **CEO Briefing** | `analytics/ceo_briefing.py` → `AI_Employee_Vault/CEO_Briefing.md` |
-| **MCP Tools** | Email · Browser · Calendar · Filesystem (4 tools in `mcp_servers/`) |
-| **Obsidian Vault** | 8-stage pipeline: Inbox → Needs_Action → Plans → Pending_Approval → Approved/Rejected → Done |
-| **Dashboard** | Next.js 14 · 6 tabs: Overview · Tasks · Approvals · Logs · CEO Briefing · **Judge Evidence** |
-| **Backend API** | FastAPI · 10+ endpoints · `GET /system-status` · `POST /approvals/{id}/decide` |
-| **A2A Protocol** | `agents/a2a_protocol.py` — agent-to-agent task delegation |
-| **Self-Healing** | `watchdog_service/watchdog.py` + `resilience/error_recovery.py` |
-| **Audit Trail** | `history/prompts.md` + `history/agent_runs.md` + `history/approvals.md` |
-
----
-
-## 🎬 System Workflow Demo
-
-![System Workflow](docs/system-workflow.gif)
-
-This animation shows the full autonomous AI Employee pipeline — from watcher input through Claude reasoning, human approval, MCP execution, evidence logging, and CEO briefing, all the way to task completion.
-
-```
-External Event → Inbox → Needs Action → Plans (Claude AI) →
-Pending Approval (HITL) → Approved → MCP Tool Execution → Evidence + CEO Briefing → Done
-                        ↘ Rejected → logged + closed
-```
 
 ---
 
@@ -175,11 +154,41 @@ flowchart TD
     GH --> HF
 ```
 
----
-
 ## 📐 Live Architecture Diagram
 
 ![Live Architecture Diagram](docs/architecture-live.svg)
+
+---
+
+## ☁️ Deployment
+
+| Layer | Platform | Config |
+|-------|----------|--------|
+| Frontend | **Vercel** | `vercel.json` · Root Directory: `frontend` · auto-deploy on push |
+| Backend | **Hugging Face Spaces** | `Dockerfile` · Docker SDK · port 7860 |
+| CI/CD | **GitHub** | Push to `main` → triggers Vercel + HF auto-deploy |
+| Fallback | Oracle Cloud OCI | PM2 · `ecosystem.config.js` |
+
+---
+
+## ⚡ Judge Quick Evidence Summary
+
+| Evidence Area | Proof |
+|--------------|-------|
+| **Cloud Deployment** | Vercel (frontend) + Hugging Face Spaces Docker (backend) + GitHub CI/CD |
+| **Gmail Watcher** | `watchers/gmail_watcher.py` — IMAP + Gmail App Password (NOT OAuth) |
+| **Filesystem Watcher** | `watchers/filesystem_watcher.py` — watchdog lib → `watched_folder/` |
+| **WhatsApp Watcher** | `watchers/whatsapp_watcher.py` — Webhook → CRITICAL priority tasks |
+| **HITL Approval** | `approval_system/hitl.py` + Dashboard Approvals tab + `history/approvals.md` |
+| **Prompt History** | `history/prompts.md` — every Claude prompt+response logged with run_id |
+| **CEO Briefing** | `analytics/ceo_briefing.py` → `AI_Employee_Vault/CEO_Briefing.md` |
+| **MCP Tools** | Email · Browser · Calendar · Filesystem (4 tools in `mcp_servers/`) |
+| **Obsidian Vault** | 8-stage pipeline: Inbox → Needs_Action → Plans → Pending_Approval → Approved/Rejected → Done |
+| **Dashboard** | Next.js 14 · 6 tabs: Overview · Tasks · Approvals · Logs · CEO Briefing · **Judge Evidence** |
+| **Backend API** | FastAPI · 10+ endpoints · `GET /system-status` · `POST /approvals/{id}/decide` |
+| **A2A Protocol** | `agents/a2a_protocol.py` — agent-to-agent task delegation |
+| **Self-Healing** | `watchdog_service/watchdog.py` + `resilience/error_recovery.py` |
+| **Audit Trail** | `history/prompts.md` + `history/agent_runs.md` + `history/approvals.md` |
 
 ---
 
@@ -265,17 +274,6 @@ ANTHROPIC_API_KEY=sk-ant-your-key-here
 ```
 
 Demo scenarios: Email HITL · File detection · WhatsApp urgent · CEO briefing · Pipeline viz
-
----
-
-## Cloud Deployment
-
-| Layer | Platform | Config |
-|-------|----------|--------|
-| Frontend | **Vercel** | `vercel.json` · Root Directory: `frontend` · auto-deploy on push |
-| Backend | **Hugging Face Spaces** | `Dockerfile` · Docker SDK · port 7860 |
-| CI/CD | **GitHub** | Push to `main` → triggers Vercel + HF auto-deploy |
-| Fallback | Oracle Cloud OCI | PM2 · `ecosystem.config.js` |
 
 ---
 
