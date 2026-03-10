@@ -34,10 +34,19 @@ pinned: false
 
 ## 🎥 Demo Video
 
-> Demo video will be added here after final recording.
+Watch the full system demo here:
 
-- YouTube Demo: `COMING_SOON`
-- Live system is already accessible at the Vercel link above
+▶️ https://youtu.be/xK3VZVu8eFI
+
+[![Watch the Demo](https://img.youtube.com/vi/xK3VZVu8eFI/maxresdefault.jpg)](https://youtu.be/xK3VZVu8eFI)
+
+This demo shows:
+
+- GitHub repository overview
+- Live frontend dashboard on Vercel
+- Backend API running on Hugging Face Spaces
+- Oracle Cloud VM infrastructure
+- End-to-end autonomous AI task pipeline
 
 ---
 
