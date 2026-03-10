@@ -96,6 +96,7 @@ Pending Approval (HITL) → Approved → MCP Tool Execution → Evidence + CEO B
 - **Self-healing watchdog** with error recovery system
 - **Full audit trail**: prompts · agent runs · approval decisions
 - **Judge Evidence tab** — interactive evidence pack in the dashboard
+- **Multi-cloud infrastructure**: Vercel (frontend), Hugging Face Spaces (backend), Oracle Cloud VM compute support
 
 ---
 
