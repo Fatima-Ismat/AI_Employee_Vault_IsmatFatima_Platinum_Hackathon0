@@ -42,6 +42,116 @@ pinned: false
 
 ---
 
+## 🎬 System Workflow (End-to-End)
+
+The AI Employee processes tasks through an autonomous multi-stage pipeline.
+
+![AI Employee Workflow](docs/workflow-demo.gif)
+
+**Pipeline Flow:**
+
+```
+External Event → Watcher Detection → Vault Task Creation → Claude Reasoning →
+Human Approval → MCP Tool Execution → Logs + CEO Briefing
+```
+
+---
+
+## ⚡ Live Dashboard Demo
+
+The AI Employee Dashboard allows real-time monitoring of the autonomous workflow.
+
+![Dashboard Demo](docs/dashboard-demo.gif)
+
+**Features demonstrated:**
+
+- Task creation and injection
+- Human-in-the-Loop approval (Approve / Reject buttons)
+- MCP tool execution tracking
+- Evidence logging with full audit trail
+- CEO briefing generation by Claude
+
+---
+
+## 📊 Evidence Screenshots
+
+### Judge Evidence Panel
+
+![Evidence Tab](docs/evidence-tab.png)
+
+### HITL Approval Workflow
+
+![Approval Workflow](docs/approval.png)
+
+### System Logs and Task History
+
+![Logs](docs/logs.png)
+
+---
+
+## 🧠 System Architecture
+
+![Architecture](docs/architecture.png)
+
+**Architecture layers:**
+
+```
+External Event Sources
+Gmail / WhatsApp / Filesystem watchers
+         ↓
+Vault Task Pipeline
+Inbox → Needs Action → Plan → Pending Approval
+         ↓
+Claude Sonnet Autonomous Reasoning
+         ↓
+Human-in-the-Loop Approval
+         ↓
+MCP Tool Execution
+  Email MCP · Browser MCP · Calendar MCP · Filesystem MCP
+         ↓
+Logs + Evidence + CEO Briefing
+         ↓
+Frontend Dashboard (Vercel) + Backend API (Hugging Face Spaces)
+```
+
+---
+
+## 🏆 Platinum Tier Feature Matrix
+
+| Capability | Status |
+|------------|--------|
+| Autonomous AI Employee | ✅ |
+| Claude Sonnet 4.6 reasoning loop | ✅ |
+| Human-in-the-Loop approvals | ✅ |
+| Gmail watcher (IMAP + App Password) | ✅ |
+| WhatsApp watcher (Webhook) | ✅ |
+| Filesystem watcher (watchdog) | ✅ |
+| MCP tool integrations (4 tools) | ✅ |
+| Obsidian Vault 8-stage pipeline | ✅ |
+| CEO briefing auto-generation | ✅ |
+| Self-healing watchdog service | ✅ |
+| Evidence logging system | ✅ |
+| Full prompt + approval audit trail | ✅ |
+| A2A agent communication protocol | ✅ |
+| Cloud deployment (Vercel + HF Spaces) | ✅ |
+| Next.js dashboard with Judge Evidence tab | ✅ |
+
+---
+
+## 🧪 30-Second Judge Test
+
+To quickly evaluate the full system:
+
+1. Open the **[Live Dashboard](https://ai-employee-vault-ismat-fatima-plat.vercel.app)**
+2. Click **🏆 Judge Evidence** tab — see the full evidence pack
+3. Switch to **Approvals** tab — approve or reject a pending task
+4. Watch MCP tool execution reflected in the **Logs** tab
+5. Open **CEO Briefing** tab — read the Claude-generated executive summary
+
+> This demonstrates the complete autonomous AI employee pipeline end-to-end.
+
+---
+
 ## ⭐ Key Features
 
 - Autonomous AI Employee system powered by Claude Sonnet 4.6
@@ -93,45 +203,6 @@ Claude Reasoning  →  Human Approval  →  MCP Execution  →  Evidence Logs  �
 
 ---
 
-## Architecture Diagram
-
-```mermaid
-flowchart LR
-
-A[External Event Sources]
-
-A --> B[Gmail Watcher]
-A --> C[WhatsApp Webhook]
-A --> D[Filesystem Watcher]
-
-B --> E[Obsidian Vault]
-C --> E
-D --> E
-
-E --> F[Inbox]
-F --> G[Needs Action]
-G --> H[Plan Generation]
-
-H --> I[Claude AI Reasoning]
-
-I --> J{Human Approval}
-
-J -->|Approved| K[Execute Task]
-J -->|Rejected| L[Return to Planning]
-
-K --> M[MCP Tools]
-
-M --> N[Email MCP]
-M --> O[Browser MCP]
-M --> P[Calendar MCP]
-
-K --> Q[Logs + Evidence]
-
-Q --> R[CEO Briefing]
-```
-
----
-
 ## Project Overview
 
 A **production-grade autonomous AI employee system** powered by **Claude Sonnet 4.6**, featuring:
@@ -149,7 +220,7 @@ A **production-grade autonomous AI employee system** powered by **Claude Sonnet 
 
 ---
 
-## Platinum Tier Feature Matrix
+## Implementation Detail — Feature Files
 
 ### Core Requirements
 
@@ -173,7 +244,7 @@ A **production-grade autonomous AI employee system** powered by **Claude Sonnet 
 | Feature | Implementation |
 |---------|---------------|
 | CEO AI Weekly Briefing | `analytics/ceo_briefing.py` |
-| Pipeline visualization + ASCII | `analytics/pipeline_visualizer.py` |
+| Pipeline visualization | `analytics/pipeline_visualizer.py` |
 | Self-healing watchdog | `watchdog_service/watchdog.py` |
 | Error recovery system | `resilience/error_recovery.py` |
 | System health monitor | `monitoring/system_health.py` |
