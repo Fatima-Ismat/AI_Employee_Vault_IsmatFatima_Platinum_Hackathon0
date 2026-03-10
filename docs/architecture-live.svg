@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" width="900" height="720">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="720" fill="#f8fafc" rx="12"/>
+  <rect x="1" y="1" width="898" height="718" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="34" text-anchor="middle" fill="#0f172a" font-size="17" font-weight="bold" font-family="Arial, sans-serif">AI Employee Vault — Platinum Tier System Architecture</text>
+  <text x="450" y="54" text-anchor="middle" fill="#475569" font-size="12" font-family="Arial, sans-serif">IsmatFatima · Personal AI Employee Hackathon 0 · claude-sonnet-4-6</text>
+
+  <!-- ═══ LAYER 1: External Event Sources (blue) ═══ -->
+  <rect x="18" y="68" width="864" height="88" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="10"/>
+  <text x="450" y="88" text-anchor="middle" fill="#1e40af" font-size="13" font-weight="bold" font-family="Arial">📡 Layer 1 — External Event Sources</text>
+
+  <rect x="50" y="96" width="238" height="46" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5" rx="7"/>
+  <text x="169" y="116" text-anchor="middle" fill="#1e40af" font-size="12" font-weight="bold" font-family="Arial">📧 Gmail Watcher</text>
+  <text x="169" y="132" text-anchor="middle" fill="#1d4ed8" font-size="10" font-family="Arial">IMAP + App Password (imap.gmail.com:993)</text>
+
+  <rect x="331" y="96" width="238" height="46" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5" rx="7"/>
+  <text x="450" y="116" text-anchor="middle" fill="#1e40af" font-size="12" font-weight="bold" font-family="Arial">💬 WhatsApp Watcher</text>
+  <text x="450" y="132" text-anchor="middle" fill="#1d4ed8" font-size="10" font-family="Arial">Webhook Integration · CRITICAL priority</text>
+
+  <rect x="612" y="96" width="238" height="46" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5" rx="7"/>
+  <text x="731" y="116" text-anchor="middle" fill="#1e40af" font-size="12" font-weight="bold" font-family="Arial">📁 Filesystem Watcher</text>
+  <text x="731" y="132" text-anchor="middle" fill="#1d4ed8" font-size="10" font-family="Arial">watchdog lib · watched_folder/</text>
+
+  <!-- Arrows down from layer 1 -->
+  <line x1="169" y1="157" x2="169" y2="178" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="450" y1="157" x2="450" y2="178" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="731" y1="157" x2="731" y2="178" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- Converge lines -->
+  <line x1="169" y1="170" x2="450" y2="178" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="731" y1="170" x2="450" y2="178" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ═══ LAYER 2: Obsidian Vault Pipeline (purple) ═══ -->
+  <rect x="18" y="182" width="864" height="90" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2" rx="10"/>
+  <text x="450" y="202" text-anchor="middle" fill="#6d28d9" font-size="13" font-weight="bold" font-family="Arial">🗄️ Layer 2 — Obsidian Vault Pipeline (8 Stages)</text>
+
+  <!-- Stage boxes -->
+  <rect x="30" y="210" width="90" height="38" fill="#e9d5ff" stroke="#8b5cf6" stroke-width="1.5" rx="6"/>
+  <text x="75" y="233" text-anchor="middle" fill="#6d28d9" font-size="11" font-family="Arial">Inbox</text>
+
+  <line x1="121" y1="229" x2="138" y2="229" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="139" y="210" width="110" height="38" fill="#e9d5ff" stroke="#8b5cf6" stroke-width="1.5" rx="6"/>
+  <text x="194" y="233" text-anchor="middle" fill="#6d28d9" font-size="11" font-family="Arial">Needs_Action</text>
+
+  <line x1="250" y1="229" x2="267" y2="229" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="268" y="210" width="80" height="38" fill="#e9d5ff" stroke="#8b5cf6" stroke-width="1.5" rx="6"/>
+  <text x="308" y="233" text-anchor="middle" fill="#6d28d9" font-size="11" font-family="Arial">Plans</text>
+
+  <line x1="349" y1="229" x2="366" y2="229" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="367" y="210" width="128" height="38" fill="#e9d5ff" stroke="#8b5cf6" stroke-width="1.5" rx="6"/>
+  <text x="431" y="233" text-anchor="middle" fill="#6d28d9" font-size="11" font-family="Arial">Pending_Approval</text>
+
+  <!-- Branch: approved -->
+  <line x1="496" y1="220" x2="520" y2="220" stroke="#16a34a" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="521" y="210" width="90" height="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1" rx="4"/>
+  <text x="566" y="223" text-anchor="middle" fill="#15803d" font-size="10" font-family="Arial">✓ Approved</text>
+  <line x1="612" y1="219" x2="629" y2="219" stroke="#16a34a" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="630" y="210" width="68" height="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1" rx="4"/>
+  <text x="664" y="223" text-anchor="middle" fill="#15803d" font-size="10" font-family="Arial">Done ✓</text>
+
+  <!-- Branch: rejected -->
+  <line x1="496" y1="240" x2="520" y2="240" stroke="#dc2626" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="521" y="230" width="90" height="18" fill="#fee2e2" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="566" y="243" text-anchor="middle" fill="#dc2626" font-size="10" font-family="Arial">✗ Rejected</text>
+
+  <!-- Arrow down from vault -->
+  <line x1="450" y1="273" x2="450" y2="296" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- ═══ LAYER 3: AI Orchestrator (green) ═══ -->
+  <rect x="18" y="300" width="864" height="92" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="10"/>
+  <text x="450" y="320" text-anchor="middle" fill="#15803d" font-size="13" font-weight="bold" font-family="Arial">🤖 Layer 3 — Ralph Wiggum Orchestrator + AI Reasoning</text>
+
+  <rect x="36" y="328" width="178" height="46" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5" rx="7"/>
+  <text x="125" y="348" text-anchor="middle" fill="#15803d" font-size="12" font-weight="bold" font-family="Arial">Claude Sonnet</text>
+  <text x="125" y="364" text-anchor="middle" fill="#166534" font-size="10" font-family="Arial">claude-sonnet-4-6 reasoning</text>
+
+  <rect x="232" y="328" width="168" height="46" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5" rx="7"/>
+  <text x="316" y="348" text-anchor="middle" fill="#15803d" font-size="12" font-weight="bold" font-family="Arial">HITL Approval</text>
+  <text x="316" y="364" text-anchor="middle" fill="#166534" font-size="10" font-family="Arial">approval_system/hitl.py</text>
+
+  <rect x="418" y="328" width="168" height="46" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5" rx="7"/>
+  <text x="502" y="348" text-anchor="middle" fill="#15803d" font-size="12" font-weight="bold" font-family="Arial">Watchdog</text>
+  <text x="502" y="364" text-anchor="middle" fill="#166534" font-size="10" font-family="Arial">watchdog_service/ self-heal</text>
+
+  <rect x="604" y="328" width="168" height="46" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5" rx="7"/>
+  <text x="688" y="348" text-anchor="middle" fill="#15803d" font-size="12" font-weight="bold" font-family="Arial">A2A Protocol</text>
+  <text x="688" y="364" text-anchor="middle" fill="#166534" font-size="10" font-family="Arial">agents/a2a_protocol.py</text>
+
+  <!-- Arrow down from orchestrator -->
+  <line x1="450" y1="393" x2="450" y2="416" stroke="#16a34a" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- ═══ LAYER 4: MCP Tools (orange) ═══ -->
+  <rect x="18" y="420" width="864" height="82" fill="#fff7ed" stroke="#f97316" stroke-width="2" rx="10"/>
+  <text x="450" y="440" text-anchor="middle" fill="#c2410c" font-size="13" font-weight="bold" font-family="Arial">🔧 Layer 4 — MCP Tool Servers (4 tools)</text>
+
+  <rect x="50" y="448" width="180" height="40" fill="#fed7aa" stroke="#f97316" stroke-width="1.5" rx="7"/>
+  <text x="140" y="470" text-anchor="middle" fill="#c2410c" font-size="12" font-family="Arial">📧 Email MCP</text>
+
+  <rect x="252" y="448" width="180" height="40" fill="#fed7aa" stroke="#f97316" stroke-width="1.5" rx="7"/>
+  <text x="342" y="470" text-anchor="middle" fill="#c2410c" font-size="12" font-family="Arial">🌐 Browser MCP</text>
+
+  <rect x="454" y="448" width="180" height="40" fill="#fed7aa" stroke="#f97316" stroke-width="1.5" rx="7"/>
+  <text x="544" y="470" text-anchor="middle" fill="#c2410c" font-size="12" font-family="Arial">📅 Calendar MCP</text>
+
+  <rect x="656" y="448" width="194" height="40" fill="#fed7aa" stroke="#f97316" stroke-width="1.5" rx="7"/>
+  <text x="753" y="470" text-anchor="middle" fill="#c2410c" font-size="12" font-family="Arial">📁 Filesystem MCP</text>
+
+  <!-- Arrow down from MCP -->
+  <line x1="450" y1="503" x2="450" y2="526" stroke="#f97316" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- ═══ LAYER 5: Outputs (teal) ═══ -->
+  <rect x="18" y="530" width="860" height="76" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2" rx="10"/>
+  <text x="449" y="550" text-anchor="middle" fill="#0f766e" font-size="13" font-weight="bold" font-family="Arial">📊 Layer 5 — Outputs + Evidence</text>
+
+  <rect x="48" y="558" width="220" height="38" fill="#99f6e4" stroke="#14b8a6" stroke-width="1.5" rx="7"/>
+  <text x="158" y="581" text-anchor="middle" fill="#0f766e" font-size="12" font-family="Arial">📋 Logs + Evidence Trail</text>
+
+  <rect x="300" y="558" width="220" height="38" fill="#99f6e4" stroke="#14b8a6" stroke-width="1.5" rx="7"/>
+  <text x="410" y="581" text-anchor="middle" fill="#0f766e" font-size="12" font-family="Arial">📝 Prompt History Log</text>
+
+  <rect x="552" y="558" width="290" height="38" fill="#99f6e4" stroke="#14b8a6" stroke-width="1.5" rx="7"/>
+  <text x="697" y="581" text-anchor="middle" fill="#0f766e" font-size="12" font-family="Arial">📊 CEO AI Weekly Briefing</text>
+
+  <!-- Arrow down from outputs -->
+  <line x1="450" y1="607" x2="450" y2="630" stroke="#14b8a6" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- ═══ LAYER 6: Cloud Deployment (dark) ═══ -->
+  <rect x="18" y="634" width="860" height="72" fill="#1e293b" stroke="#475569" stroke-width="2" rx="10"/>
+  <text x="449" y="654" text-anchor="middle" fill="#f1f5f9" font-size="13" font-weight="bold" font-family="Arial">☁️ Layer 6 — Cloud Deployment</text>
+
+  <rect x="50" y="661" width="240" height="34" fill="#334155" stroke="#64748b" stroke-width="1" rx="6"/>
+  <text x="170" y="682" text-anchor="middle" fill="#e2e8f0" font-size="11" font-family="Arial">▲ Vercel — Next.js 14 Frontend</text>
+
+  <rect x="330" y="661" width="240" height="34" fill="#334155" stroke="#64748b" stroke-width="1" rx="6"/>
+  <text x="450" y="682" text-anchor="middle" fill="#e2e8f0" font-size="11" font-family="Arial">🤗 Hugging Face Spaces Backend</text>
+
+  <rect x="610" y="661" width="240" height="34" fill="#334155" stroke="#64748b" stroke-width="1" rx="6"/>
+  <text x="730" y="682" text-anchor="middle" fill="#e2e8f0" font-size="11" font-family="Arial">🐙 GitHub — CI/CD Source</text>
+
+  <!-- Footer -->
+  <text x="450" y="710" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Arial">AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0 · github.com/Fatima-Ismat</text>
+</svg>
