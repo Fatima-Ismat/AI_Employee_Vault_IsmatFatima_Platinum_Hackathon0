@@ -52,6 +52,7 @@ app.add_middleware(
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "https://ismat110-ai-employee-vault-ismat-platinum.hf.space",
+        "https://ai-employee-vault-ismat-fatima-plat.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],

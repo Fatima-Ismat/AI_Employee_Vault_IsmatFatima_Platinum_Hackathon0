@@ -8,6 +8,7 @@ import ApprovalQueue from "../components/ApprovalQueue";
 import LogViewer from "../components/LogViewer";
 import CeoBriefing from "../components/CeoBriefing";
 import PipelineChart from "../components/PipelineChart";
+import JudgeEvidence from "../components/JudgeEvidence";
 import { api } from "../lib/api";
 import type { SystemStatus, PipelineStats } from "../lib/types";
 
@@ -16,7 +17,7 @@ export default function Dashboard() {
   const [pipeline, setPipeline] = useState<PipelineStats | null>(null);
   const [loading, setLoading]   = useState(true);
   const [error, setError]       = useState<string | null>(null);
-  const [tab, setTab]           = useState<"overview" | "tasks" | "approvals" | "logs" | "briefing">("overview");
+  const [tab, setTab]           = useState<"overview" | "tasks" | "approvals" | "logs" | "briefing" | "evidence">("overview");
 
   const refresh = async () => {
     try {
@@ -104,17 +105,21 @@ export default function Dashboard() {
 
         {/* Tab navigation */}
         <div className="flex gap-1 mb-6 bg-surface-card border border-surface-border rounded-xl p-1 w-fit">
-          {(["overview", "tasks", "approvals", "logs", "briefing"] as const).map((t) => (
+          {(["overview", "tasks", "approvals", "logs", "briefing", "evidence"] as const).map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
               className={`px-4 py-1.5 rounded-lg text-sm font-medium capitalize transition-all ${
                 tab === t
-                  ? "bg-brand-600 text-white shadow"
-                  : "text-slate-400 hover:text-slate-200 hover:bg-surface-hover"
+                  ? t === "evidence"
+                    ? "bg-yellow-600 text-white shadow"
+                    : "bg-brand-600 text-white shadow"
+                  : t === "evidence"
+                    ? "text-yellow-400 hover:text-yellow-200 hover:bg-yellow-900/30 border border-yellow-700/40"
+                    : "text-slate-400 hover:text-slate-200 hover:bg-surface-hover"
               }`}
             >
-              {t === "briefing" ? "CEO Briefing" : t}
+              {t === "briefing" ? "CEO Briefing" : t === "evidence" ? "🏆 Judge Evidence" : t}
             </button>
           ))}
         </div>
@@ -130,6 +135,7 @@ export default function Dashboard() {
         {tab === "approvals" && <ApprovalQueue onRefresh={refresh} />}
         {tab === "logs"      && <LogViewer />}
         {tab === "briefing"  && <CeoBriefing />}
+        {tab === "evidence"  && <JudgeEvidence />}
       </Layout>
     </>
   );
