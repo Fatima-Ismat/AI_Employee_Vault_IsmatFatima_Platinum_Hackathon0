@@ -46,8 +46,6 @@ pinned: false
 
 The AI Employee processes tasks through an autonomous multi-stage pipeline.
 
-![AI Employee Workflow](docs/workflow-demo.gif)
-
 **Pipeline Flow:**
 
 ```
@@ -61,7 +59,7 @@ Human Approval → MCP Tool Execution → Logs + CEO Briefing
 
 The AI Employee Dashboard allows real-time monitoring of the autonomous workflow.
 
-![Dashboard Demo](docs/dashboard-demo.gif)
+> **Live:** [ai-employee-vault-ismat-fatima-plat.vercel.app](https://ai-employee-vault-ismat-fatima-plat.vercel.app)
 
 **Features demonstrated:**
 
@@ -73,45 +71,83 @@ The AI Employee Dashboard allows real-time monitoring of the autonomous workflow
 
 ---
 
-## 📊 Evidence Screenshots
+## 📊 Evidence Sections (Live on Dashboard)
+
+> **All evidence is viewable live on the dashboard — open the tabs below:**
 
 ### Judge Evidence Panel
-
-![Evidence Tab](docs/evidence-tab.png)
+→ Open the **[🏆 Judge Evidence tab](https://ai-employee-vault-ismat-fatima-plat.vercel.app)** on the live dashboard for the full interactive evidence pack including deployment proof, watcher proof, HITL proof, logs summary, CEO briefing proof, and Platinum checklist.
 
 ### HITL Approval Workflow
-
-![Approval Workflow](docs/approval.png)
+→ Open the **Approvals tab** on the live dashboard to see pending tasks, approve or reject them, and view the full `history/approvals.md` audit trail.
 
 ### System Logs and Task History
-
-![Logs](docs/logs.png)
+→ Open the **Logs tab** on the live dashboard to view real-time log entries from `AI_Employee_Vault/Logs/` with level filtering (ERROR · WARNING · INFO · DEBUG).
 
 ---
 
 ## 🧠 System Architecture
 
-![Architecture](docs/architecture.png)
+```mermaid
+flowchart TD
+    subgraph SOURCES["📡 External Event Sources"]
+        G[Gmail IMAP Watcher]
+        W[WhatsApp Webhook Watcher]
+        F[Filesystem Watcher]
+    end
 
-**Architecture layers:**
+    subgraph VAULT["🗄️ Obsidian Vault Pipeline"]
+        IN[Inbox]
+        NA[Needs Action]
+        PL[Plans]
+        PA[Pending Approval]
+        AP[Approved]
+        RJ[Rejected]
+        DN[Done]
+    end
 
-```
-External Event Sources
-Gmail / WhatsApp / Filesystem watchers
-         ↓
-Vault Task Pipeline
-Inbox → Needs Action → Plan → Pending Approval
-         ↓
-Claude Sonnet Autonomous Reasoning
-         ↓
-Human-in-the-Loop Approval
-         ↓
-MCP Tool Execution
-  Email MCP · Browser MCP · Calendar MCP · Filesystem MCP
-         ↓
-Logs + Evidence + CEO Briefing
-         ↓
-Frontend Dashboard (Vercel) + Backend API (Hugging Face Spaces)
+    subgraph ORCH["🤖 Ralph Wiggum Orchestrator"]
+        CL[Claude Sonnet Reasoning]
+        HITL[HITL Approval Engine]
+        WD[Watchdog Self-Heal]
+        A2A[A2A Protocol]
+    end
+
+    subgraph MCP["🔧 MCP Tools"]
+        EM[Email MCP]
+        BR[Browser MCP]
+        CA[Calendar MCP]
+        FS[Filesystem MCP]
+    end
+
+    subgraph OUT["📊 Outputs"]
+        LG[Logs + Evidence]
+        CB[CEO Briefing]
+    end
+
+    subgraph DEPLOY["☁️ Cloud Deployment"]
+        VR[Frontend · Vercel]
+        HF[Backend API · HuggingFace Spaces]
+        GH[GitHub · CI/CD Source]
+    end
+
+    G --> IN
+    W --> IN
+    F --> IN
+    IN --> NA --> PL --> PA
+    PA -->|approved| AP --> DN
+    PA -->|rejected| RJ
+    PL --> CL
+    CL --> HITL --> PA
+    WD --> ORCH
+    A2A --> ORCH
+    AP --> MCP
+    MCP --> LG
+    MCP --> CB
+    LG --> VR
+    CB --> VR
+    GH --> VR
+    GH --> HF
 ```
 
 ---
