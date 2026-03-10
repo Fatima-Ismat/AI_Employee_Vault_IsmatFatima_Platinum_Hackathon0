@@ -99,11 +99,13 @@ pinned: false
 
 ## 🎬 System Workflow Demo
 
-![System Workflow](docs/system-workflow.svg)
+![System Workflow](docs/system-workflow.gif)
+
+This animation shows the full autonomous AI Employee pipeline — from watcher input through Claude reasoning, human approval, MCP execution, evidence logging, and CEO briefing, all the way to task completion.
 
 ```
-External Event → Watcher Detection → Inbox → Needs_Action → Plans (Claude AI) →
-Pending_Approval (HITL) → Approved → MCP Tool Execution → Evidence + CEO Briefing → Done
+External Event → Inbox → Needs Action → Plans (Claude AI) →
+Pending Approval (HITL) → Approved → MCP Tool Execution → Evidence + CEO Briefing → Done
                         ↘ Rejected → logged + closed
 ```
 
