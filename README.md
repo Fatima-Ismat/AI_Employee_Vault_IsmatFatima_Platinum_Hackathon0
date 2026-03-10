@@ -13,22 +13,60 @@ pinned: false
 
 > **Project Owner:** Ismat Fatima &nbsp;|&nbsp; **Tier:** Platinum &nbsp;|&nbsp; **Model:** claude-sonnet-4-6
 
-[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-14%2B-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Claude Agents](https://img.shields.io/badge/Claude-Sonnet%204.6-CC785C?style=for-the-badge&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
-[![Hackathon](https://img.shields.io/badge/Hackathon-Platinum%20Tier-FFD700?style=for-the-badge&logo=trophy&logoColor=black)](https://github.com/Fatima-Ismat/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0)
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green?style=for-the-badge&logo=fastapi)
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=nextdotjs)
+![Claude](https://img.shields.io/badge/Claude-Sonnet%204.6-purple?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue?style=for-the-badge&logo=docker)
+![Vercel](https://img.shields.io/badge/Vercel-Frontend-black?style=for-the-badge&logo=vercel)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-Spaces-yellow?style=for-the-badge)
+![AI Agents](https://img.shields.io/badge/AI-Agents-red?style=for-the-badge)
+![Human in Loop](https://img.shields.io/badge/HITL-Approval-orange?style=for-the-badge)
+![MCP Tools](https://img.shields.io/badge/MCP-Tools-blueviolet?style=for-the-badge)
+![Autonomous System](https://img.shields.io/badge/Autonomous-System-green?style=for-the-badge)
+![Watchdog](https://img.shields.io/badge/System-Watchdog-red?style=for-the-badge)
+![Obsidian Vault](https://img.shields.io/badge/Vault-Obsidian-purple?style=for-the-badge)
+![Evidence Logs](https://img.shields.io/badge/Evidence-Logging-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
+![Hackathon](https://img.shields.io/badge/Hackathon-Platinum%20Tier-gold?style=for-the-badge)
 
 ---
 
-## 🔗 Live Deployment Links (Judge Quick View)
+## 🚀 Live Deployment (Judge Quick Access)
 
-| Service | URL | Status |
-|---------|-----|--------|
-| **GitHub Repo** | https://github.com/Fatima-Ismat/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0 | ✅ Public |
-| **Frontend Dashboard** | https://ai-employee-vault-ismat-fatima-plat.vercel.app | ✅ Vercel Live |
-| **Backend API** | https://ismat110-ai-employee-vault-ismat-platinum.hf.space | ✅ HF Spaces Live |
-| **Hugging Face Space** | https://huggingface.co/spaces/ismat110/ai-employee-vault-ismat-platinum | ✅ Docker |
+| Service | URL |
+|---------|-----|
+| 🌐 Frontend Dashboard | https://ai-employee-vault-ismat-fatima-plat.vercel.app |
+| 🤖 Backend API | https://ismat110-ai-employee-vault-ismat-platinum.hf.space |
+| 📦 GitHub Repository | https://github.com/Fatima-Ismat/AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0 |
+
+---
+
+## ⭐ Key Features
+
+- Autonomous AI Employee system powered by Claude Sonnet 4.6
+- Claude Sonnet reasoning loop with full prompt history logging
+- Human-in-the-loop approvals (HITL) with dashboard UI
+- MCP tool integrations (Email · Browser · Calendar · Filesystem)
+- Email / WhatsApp / Filesystem watchers
+- Obsidian vault 8-stage workflow pipeline
+- CEO briefing auto-generation by Claude
+- Self-healing watchdog service with error recovery
+- Full audit trail logging (prompts, agent runs, approvals)
+- Judge evidence dashboard tab with interactive evidence pack
+
+---
+
+## 🧑‍⚖️ Judge Instructions
+
+1. Open the **[Live Dashboard](https://ai-employee-vault-ismat-fatima-plat.vercel.app)**
+2. Click the **🏆 Judge Evidence** tab
+3. Trigger a demo task via the **Approvals** tab or run `python demo/advanced_demo.py`
+4. Observe the full pipeline:
+
+```
+Claude Reasoning  →  Human Approval  →  MCP Execution  →  Evidence Logs  →  CEO Briefing
+```
 
 ---
 
@@ -51,75 +89,52 @@ pinned: false
 | **Self-Healing** | `watchdog_service/watchdog.py` + `resilience/error_recovery.py` |
 | **Audit Trail** | `history/prompts.md` + `history/agent_runs.md` + `history/approvals.md` |
 
-> **Judges: Open the live dashboard and click the "🏆 Judge Evidence" tab for a full interactive evidence pack.**
+> **Judges: Open the live dashboard and click the "🏆 Judge Evidence" tab for the full interactive evidence pack.**
 
 ---
 
 ## Architecture Diagram
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    EXTERNAL EVENT SOURCES                       │
-│   Gmail (IMAP)      WhatsApp (Webhook)      Filesystem          │
-│   watchers/gmail_   watchers/whatsapp_      watchers/           │
-│   watcher.py        watcher.py              filesystem_watcher  │
-└──────────────────────────────┬──────────────────────────────────┘
-                               │  Markdown task files
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                  OBSIDIAN VAULT PIPELINE                        │
-│                                                                 │
-│  Inbox → Needs_Action → Plans → Pending_Approval                │
-│                                      ↘ Approved → Done          │
-│                                      ↘ Rejected                 │
-│                                      ↘ Recovery (error retry)   │
-│                                                                 │
-│  Dashboard.md  Company_Handbook.md  Business_Goals.md           │
-│  CEO_Briefing.md (auto-generated)   Logs/ (daily)               │
-└──────────────────────────────┬──────────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│              RALPH WIGGUM ORCHESTRATOR                          │
-│              orchestrator/agent_loop.py                         │
-│                                                                 │
-│   ┌──────────────┬─────────────────┬──────────────────────┐    │
-│   ▼              ▼                 ▼                      ▼    │
-│ Claude AI     HITL Approval    Watchdog             A2A         │
-│ Reasoning     approval_system/ watchdog_service/    Protocol    │
-│ agents/       hitl.py          watchdog.py          agents/     │
-│ claude_agent                                        a2a_proto   │
-│   │                                                             │
-│   ▼                                                             │
-│ MCP Tools: email_mcp · browser_mcp · calendar_mcp · fs_mcp     │
-└──────────────────────────────┬──────────────────────────────────┘
-                               │
-              ┌────────────────┴─────────────────┐
-              ▼                                  ▼
-┌─────────────────────┐               ┌──────────────────────┐
-│     ANALYTICS       │               │    AUDIT TRAIL       │
-│ CEO Briefing        │               │ history/prompts.md   │
-│ analytics/          │               │ history/agent_runs   │
-│ ceo_briefing.py     │               │ history/approvals    │
-│ Pipeline Visualizer │               │ (permanent logs)     │
-└─────────────────────┘               └──────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    CLOUD DEPLOYMENT                             │
-│                                                                 │
-│  Backend:  Hugging Face Spaces · Docker · FastAPI · port 7860   │
-│  Frontend: Vercel · Next.js 14 · TypeScript · auto-deploy       │
-│  Source:   GitHub main branch → triggers both deploys (CI/CD)   │
-│  Fallback: Oracle Cloud OCI · PM2 · ecosystem.config.js         │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+
+A[External Event Sources]
+
+A --> B[Gmail Watcher]
+A --> C[WhatsApp Webhook]
+A --> D[Filesystem Watcher]
+
+B --> E[Obsidian Vault]
+C --> E
+D --> E
+
+E --> F[Inbox]
+F --> G[Needs Action]
+G --> H[Plan Generation]
+
+H --> I[Claude AI Reasoning]
+
+I --> J{Human Approval}
+
+J -->|Approved| K[Execute Task]
+J -->|Rejected| L[Return to Planning]
+
+K --> M[MCP Tools]
+
+M --> N[Email MCP]
+M --> O[Browser MCP]
+M --> P[Calendar MCP]
+
+K --> Q[Logs + Evidence]
+
+Q --> R[CEO Briefing]
 ```
 
 ---
 
 ## Project Overview
 
-A **production-grade autonomous AI employee system** powered by **Claude Sonnet 4-6**, featuring:
+A **production-grade autonomous AI employee system** powered by **Claude Sonnet 4.6**, featuring:
 
 - **8-stage Obsidian vault pipeline** (file-based persistent memory)
 - **3 event watchers** (Gmail IMAP, WhatsApp Webhook, Filesystem)
@@ -258,8 +273,7 @@ AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/
 │   └── components/JudgeEvidence.tsx   Judge Evidence tab
 ├── demo/                      Demo scripts (zero API cost)
 ├── utils/                     Shared utilities
-├── docs/                      Full documentation (10 files)
-└── history/                   Audit trail (judge proof)
+└── docs/                      Full documentation (10 files)
 ```
 
 ---
