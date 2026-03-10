@@ -34,7 +34,7 @@ pinned: false
 
 ## 🎥 Demo Video
 
-Watch the full system demo here:
+Watch the full system demo below (2 min overview of architecture and live deployment).
 
 ▶️ https://youtu.be/xK3VZVu8eFI
 
