@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://141.145.155.147:8000";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://ismat110-ai-employee-vault-ismat-platinum.hf.space";
 
 const client = axios.create({ baseURL: BASE_URL, timeout: 10_000 });
 
