@@ -160,6 +160,47 @@ flowchart TD
 
 ---
 
+## 📁 Repository Structure
+
+```
+AI_Employee_Vault_IsmatFatima_Platinum_Hackathon0/
+├── AI_Employee_Vault/            # Obsidian vault — 8-stage pipeline
+│   ├── Inbox/                    # Stage 1: incoming events
+│   ├── Needs_Action/             # Stage 2: triaged tasks
+│   ├── Plans/                    # Stage 3: Claude-generated plans
+│   ├── Pending_Approval/         # Stage 4: awaiting HITL decision
+│   ├── Approved/                 # Stage 5a: approved tasks
+│   ├── Rejected/                 # Stage 5b: rejected tasks
+│   ├── Done/                     # Stage 6: completed tasks
+│   ├── Logs/                     # Execution logs
+│   ├── CEO_Briefing.md           # Auto-generated executive summary
+│   └── Dashboard.md              # Vault status overview
+├── agents/                       # Claude agent + A2A protocol
+├── analytics/                    # CEO briefing generator
+├── approval_system/              # HITL approval engine
+├── backend/                      # FastAPI — 10+ endpoints
+├── cloud/                        # Cloud agent (S3/GCS/local)
+├── demo/                         # Demo scenarios (zero API cost)
+├── docs/                         # Architecture diagrams + GIF
+├── frontend/                     # Next.js 14 dashboard (6 tabs)
+├── history/                      # Prompt + agent run audit logs
+├── mcp_servers/                  # Email · Browser · Calendar · Filesystem MCP
+├── monitoring/                   # System health monitor
+├── orchestrator/                 # Ralph Wiggum autonomous loop
+├── resilience/                   # Error recovery system
+├── utils/                        # Shared utilities
+├── watchdog_service/             # Self-healing watchdog
+├── watchers/                     # Gmail · WhatsApp · Filesystem watchers
+├── Dockerfile                    # Hugging Face Spaces Docker config
+├── requirements.txt              # Python dependencies
+├── requirements-hf.txt           # HF-specific dependencies
+├── ecosystem.config.js           # PM2 process manager config
+├── vercel.json                   # Vercel frontend deployment config
+└── README.md
+```
+
+---
+
 ## ☁️ Deployment
 
 | Layer | Platform | Config |
